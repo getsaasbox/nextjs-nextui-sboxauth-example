@@ -10,10 +10,10 @@ export function AdCardSample() {
             The fastest path to your SaaS
           </Text>
           <Text h3 color="white">
-            Turnkey auth and subscription
+            Built in user login and Stripe subscriptions
           </Text>
           <Text h3 color="white">
-            Start serving customers from day one.
+            No setup required.
           </Text>
         </Col>
       </Card.Header>
