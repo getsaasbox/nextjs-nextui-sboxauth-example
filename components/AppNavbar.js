@@ -1,5 +1,6 @@
 import { Navbar, Link, Text, Avatar, Dropdown } from "@nextui-org/react";
 import { AcmeLogo } from "../components/AcmeLogo.js";
+import { useRouter } from 'next/router'
 
 export function AppNavbar({ children }) {
   const collapseItems = [
@@ -15,6 +16,12 @@ export function AppNavbar({ children }) {
     "Log Out",
   ];
   let user = children.props.user;
+
+  // Delete ?otc= from query string once user is processed.
+  const router = useRouter();
+  delete router.query.otc;
+  router.push(router)
+  // End delete ?otc=
 
   return (
     <Navbar isBordered variant="sticky">
