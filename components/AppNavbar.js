@@ -5,14 +5,15 @@ import { FeaturesDropdown } from "./FeaturesDropdown"
 
 export function AppNavbar({ children }) {
   const collapseItems = [
+    "Signin State",
     "Profile",
     "Dashboard",
     "Activity",
     "Analytics",
     "System",
     "Deployments",
-    "My Settings",
-    "Team Settings",
+    "Account",
+    "Subscription",
     "Help & Feedback",
     "Log Out",
   ];
@@ -44,6 +45,7 @@ export function AppNavbar({ children }) {
         activeColor="secondary"
         hideIn="xs"
         variant="underline"
+        textValue="Features"
       >
         <FeaturesDropdown />
         <Navbar.Link isActive href="#">App Page 1</Navbar.Link>
@@ -58,7 +60,7 @@ export function AppNavbar({ children }) {
         }}
       >
         <Dropdown placement="bottom-right">
-          <Navbar.Item>
+          <Navbar.Item textValue="user avatar">
             <Dropdown.Trigger>
               <Avatar
                 bordered
@@ -74,7 +76,7 @@ export function AppNavbar({ children }) {
             color="secondary"
             onAction={(actionKey) => console.log({ actionKey })}
           >
-            <Dropdown.Item key="profile" css={{ height: "$18" }}>
+            <Dropdown.Item textValue="user profile" key="signin_state" css={{ height: "$18" }}>
               <Text b color="inherit" css={{ d: "flex" }}>
                 Signed in as
               </Text>
@@ -82,19 +84,30 @@ export function AppNavbar({ children }) {
                 {user.email}
               </Text>
             </Dropdown.Item>
-            <Dropdown.Item key="settings" withDivider>
-              My Settings
+            <Dropdown.Item textValue="user profile" key="profile">
+              <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/profile"}>
+                Profile
+              </Link>
             </Dropdown.Item>
-            <Dropdown.Item key="team_settings">Team Settings</Dropdown.Item>
+            <Dropdown.Item textValue="user account" key="account">
+              <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/account"}>
+                Account
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item textValue="user subscription" key="subscription">
+               <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/subscription"}>
+                Subscription
+              </Link>
+            </Dropdown.Item>
             <Dropdown.Item key="analytics" withDivider>
               Analytics
             </Dropdown.Item>
-            <Dropdown.Item key="system">System</Dropdown.Item>
-            <Dropdown.Item key="configurations">Configurations</Dropdown.Item>
-            <Dropdown.Item key="help_and_feedback" withDivider>
+            <Dropdown.Item textValue="app feature" key="system">System</Dropdown.Item>
+            <Dropdown.Item textValue="app feature" key="configurations">Configurations</Dropdown.Item>
+            <Dropdown.Item textValue="app feature" key="help_and_feedback" withDivider>
               Help & Feedback
             </Dropdown.Item>
-            <Dropdown.Item key="logout" withDivider color="error">
+            <Dropdown.Item textValue="logout action" key="logout" withDivider color="error">
               <Link href="/logout">
               Log Out
               </Link>

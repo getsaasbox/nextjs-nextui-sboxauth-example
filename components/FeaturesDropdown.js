@@ -5,7 +5,7 @@ export function FeaturesDropdown()
 {
   return (
     <Dropdown isBordered>
-      <Navbar.Item>
+      <Navbar.Item textValue="Dropdown button">
         <Dropdown.Button
           auto
           light
@@ -45,6 +45,7 @@ export function FeaturesDropdown()
           showFullDescription
           description="ACME scales apps to meet user demand, automagically, based on load."
           icon={icons.scale}
+          textValue="acme feature"
         >
           Autoscaling
         </Dropdown.Item>
@@ -53,6 +54,7 @@ export function FeaturesDropdown()
           showFullDescription
           description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
           icon={icons.activity}
+          textValue="Acme feature"
         >
           Usage Metrics
         </Dropdown.Item>
@@ -61,6 +63,7 @@ export function FeaturesDropdown()
           showFullDescription
           description="ACME runs on ACME, join us and others serving requests at web scale."
           icon={icons.flash}
+          textValue="Acme feature"
         >
           Production Ready
         </Dropdown.Item>
@@ -69,6 +72,7 @@ export function FeaturesDropdown()
           showFullDescription
           description="Applications stay on the grid with high availability and high uptime guarantees."
           icon={icons.server}
+          textValue="Acme feature"
         >
           +99% Uptime
         </Dropdown.Item>
@@ -77,6 +81,7 @@ export function FeaturesDropdown()
           showFullDescription
           description="Overcome any challenge with a supporting team ready to respond."
           icon={icons.user}
+          textValue="Acme feature"
         >
           +Supreme Support
         </Dropdown.Item>
