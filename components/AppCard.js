@@ -1,17 +1,12 @@
-import { Spacer, Card, Grid, Text, Link } from "@nextui-org/react";
+import { Avatar, Spacer, Card, Grid, Text, Link } from "@nextui-org/react";
 
 export function AppCard({user}) {
   const username = user.firstname + " " + user.lastname;
-  return (
-    <Spacer y={2}/>
+  return (<>
+    <Spacer y={2} />
     <Card css={{ p: "$6", mw: "400px" }}>
       <Card.Header>
-        <img
-          alt={username}
-          src={user.avatarUrl}
-          width="34px"
-          height="34px"
-        />
+        <Avatar src={user.avatarUrl} size="xl" />
         <Grid.Container css={{ pl: "$6" }}>
           <Grid xs={12}>
             <Text h4 css={{ lineHeight: "$xs" }}>
@@ -39,5 +34,6 @@ export function AppCard({user}) {
         </Link>
       </Card.Footer>
     </Card>
+    </>
   );
 }
