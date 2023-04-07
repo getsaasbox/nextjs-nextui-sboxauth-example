@@ -34,6 +34,7 @@ export function AppCard({user}) {
         </Link>
       </Card.Footer>
     </Card>
+    <Spacer y={2} />
     </>
   );
 }
