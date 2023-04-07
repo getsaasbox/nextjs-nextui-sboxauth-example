@@ -1,8 +1,14 @@
 
 import withSboxAuth from 'sbox-auth-next';
+import { AppCard } from '../components/AppCard'
+import { Container, Card, Row, Text } from "@nextui-org/react";
 
-function Home() {
-  return(<div>Hello World</div>);
+function Home({ user }) {
+  return (
+    <Container>
+    <AppCard user={user} />
+    </Container>
+  );
 }
 
 export const getServerSideProps = withSboxAuth(
