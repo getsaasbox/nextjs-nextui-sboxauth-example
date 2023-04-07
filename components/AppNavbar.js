@@ -37,7 +37,9 @@ export function AppNavbar({ children }) {
       window.location = route;
     }
     if (actionKey == "logout") {
-      router.push("/logout");
+      fetch('/app/api/logout', {
+        method: 'POST', redirect: 'follow'
+      });
     }
   }
 
@@ -120,7 +122,7 @@ export function AppNavbar({ children }) {
               Help & Feedback
             </Dropdown.Item>
             <Dropdown.Item textValue="logout action" key="logout" withDivider color="error">
-              Log Out
+                Log Out
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
