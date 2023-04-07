@@ -25,6 +25,20 @@ export function AppNavbar({ children }) {
   router.push(router)
   // End delete ?otc=
 
+  // Dropdown url handler:
+  // Take user to SaaSBox url for managing account, profile and subscription.
+  function handleAction({actionKey}) {
+    const domain = process.env.NEXT_PUBLIC_SAASBOX_DOMAIN;
+    console.log("handleAction called with", actionKey)
+    if (actionKey == "profile" || actionKey == "account" || actionKey == "subscription") {
+      let route = domain + "/user/" + actionKey;
+      window.location = route;
+    }
+    if (actionKey == "log_out") {
+      router.push("/logout");
+    }
+  }
+
   return (
     <Navbar isBordered variant="sticky">
       <Navbar.Toggle showIn="xs" />
@@ -74,7 +88,9 @@ export function AppNavbar({ children }) {
           <Dropdown.Menu
             aria-label="User menu actions"
             color="secondary"
-            onAction={(actionKey) => console.log({ actionKey })}
+            onAction={(actionKey) => 
+              handleAction({ actionKey })
+            }
           >
             <Dropdown.Item textValue="user profile" key="signin_state" css={{ height: "$18" }}>
               <Text b color="inherit" css={{ d: "flex" }}>
@@ -85,19 +101,13 @@ export function AppNavbar({ children }) {
               </Text>
             </Dropdown.Item>
             <Dropdown.Item textValue="user profile" key="profile">
-              <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/profile"}>
-                Profile
-              </Link>
+              Profile
             </Dropdown.Item>
             <Dropdown.Item textValue="user account" key="account">
-              <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/account"}>
-                Account
-              </Link>
+              Account
             </Dropdown.Item>
             <Dropdown.Item textValue="user subscription" key="subscription">
-               <Link color="text" href={process.env.NEXT_PUBLIC_SAASBOX_DOMAIN + "/user/subscription"}>
-                Subscription
-              </Link>
+              Subscription
             </Dropdown.Item>
             <Dropdown.Item key="analytics" withDivider>
               Analytics
@@ -108,9 +118,7 @@ export function AppNavbar({ children }) {
               Help & Feedback
             </Dropdown.Item>
             <Dropdown.Item textValue="logout action" key="logout" withDivider color="error">
-              <Link href="/logout">
               Log Out
-              </Link>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
