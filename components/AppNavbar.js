@@ -46,7 +46,7 @@ export function AppNavbar({ children }) {
         variant="underline"
       >
         <FeaturesDropdown />
-        <Navbar.Link href="#">App Page 1</Navbar.Link>
+        <Navbar.Link isActive href="#">App Page 1</Navbar.Link>
         <Navbar.Link href="#">App Page 2</Navbar.Link>
       </Navbar.Content>
       <Navbar.Content
