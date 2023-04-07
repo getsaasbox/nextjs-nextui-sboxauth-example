@@ -39,7 +39,13 @@ export function AppNavbar({ children }) {
     if (actionKey == "logout") {
       fetch('/app/api/logout', {
         method: 'POST', redirect: 'follow'
-      });
+      }).then(resp => {
+        if (resp.ok && resp.redirected) {
+          window.location = resp.url; // Manually redirect to log out from main sbox app.
+        } else {
+          console.log("Logout failed. either nextjs api handler for /logout or sbox-auth LogoutAPI call failed.", resp);
+        }
+      })
     }
   }
 
