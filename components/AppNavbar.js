@@ -95,7 +95,9 @@ export function AppNavbar({ children }) {
               Help & Feedback
             </Dropdown.Item>
             <Dropdown.Item key="logout" withDivider color="error">
+              <Link href="/logout">
               Log Out
+              </Link>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
