@@ -7,7 +7,7 @@ export const Layout = ({ children }) => (
       maxW: "100%"
     }}
   >
-    <AppNavbar />
+    <AppNavbar children={children} />
     <main className="flex-1">
       {children}
     </main>
