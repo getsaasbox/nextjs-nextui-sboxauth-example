@@ -36,7 +36,7 @@ export function AppNavbar({ children }) {
       let route = domain + "/user/" + actionKey;
       window.location = route;
     }
-    if (actionKey == "log_out") {
+    if (actionKey == "logout") {
       router.push("/logout");
     }
   }

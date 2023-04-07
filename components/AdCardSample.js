@@ -13,10 +13,7 @@ export function AdCardSample() {
             Turnkey auth and subscription
           </Text>
           <Text h3 color="white">
-            Zero integration
-          </Text>
-          <Text h3 color="white">
-            Start serving users from day one.
+            Start serving customers from day one.
           </Text>
         </Col>
       </Card.Header>

@@ -51,8 +51,8 @@ function Home({ user }) {
           </TremorCard>
           <TremorCol numColSpan={3}>
             <TremorCard>
-              <TremorText>Main UI and navbar powered by Next UI - Awesome open source library of React UI components</TremorText>
-              <TremorText>Charts Powered by Tremor UI - Awesome open source library for building React Dashboards</TremorText>
+              <TremorText>Main UI and navbar powered by Next UI - An awesome open source library of React UI components</TremorText>
+              <TremorText>Charts Powered by Tremor UI - An awesome open source library for building React Dashboards</TremorText>
             </TremorCard>
           </TremorCol>
       </TremorGrid>
