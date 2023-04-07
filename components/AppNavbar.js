@@ -1,6 +1,7 @@
 import { Navbar, Link, Text, Avatar, Dropdown } from "@nextui-org/react";
-import { AcmeLogo } from "../components/AcmeLogo.js";
+import { AcmeLogo } from "./AcmeLogo";
 import { useRouter } from 'next/router'
+import { FeaturesDropdown } from "./FeaturesDropdown"
 
 export function AppNavbar({ children }) {
   const collapseItems = [
@@ -42,14 +43,11 @@ export function AppNavbar({ children }) {
         enableCursorHighlight
         activeColor="secondary"
         hideIn="xs"
-        variant="highlight-rounded"
+        variant="underline"
       >
-        <Navbar.Link href="#">Features</Navbar.Link>
-        <Navbar.Link isActive href="#">
-          Customers
-        </Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Company</Navbar.Link>
+        <FeaturesDropdown />
+        <Navbar.Link href="#">App Page 1</Navbar.Link>
+        <Navbar.Link href="#">App Page 2</Navbar.Link>
       </Navbar.Content>
       <Navbar.Content
         css={{
