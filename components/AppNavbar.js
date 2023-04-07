@@ -21,8 +21,10 @@ export function AppNavbar({ children }) {
 
   // Delete ?otc= from query string once user is processed.
   const router = useRouter();
-  delete router.query.otc;
-  router.push(router)
+  if (router.query.otc) {
+    delete router.query.otc;
+    router.push(router)
+  }
   // End delete ?otc=
 
   // Dropdown url handler:

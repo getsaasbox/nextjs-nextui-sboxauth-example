@@ -1,9 +1,8 @@
-import { Avatar, Spacer, Card, Grid, Text, Link } from "@nextui-org/react";
+import { Avatar, Spacer, Card, Grid, Text, Link, Row } from "@nextui-org/react";
 
 export function AppCard({user}) {
   const username = user.firstname + " " + user.lastname;
   return (<>
-    <Spacer y={2} />
     <Card css={{ p: "$6", mw: "400px" }}>
       <Card.Header>
         <Avatar src={user.avatarUrl} size="xl" />
@@ -24,17 +23,28 @@ export function AppCard({user}) {
         </Text>
       </Card.Body>
       <Card.Footer>
-        <Link
-          icon
-          color="primary"
-          target="_blank"
-          href="https://github.com/getsaasbox/nextjs-nextui-sboxauth-example"
-        >
-          Clone on GitHub and start your SaaS.
-        </Link>
+        <Row>
+          <Link
+            icon
+            color="primary"
+            target="_blank"
+            href="https://github.com/getsaasbox/nextjs-nextui-sboxauth-example"
+          >
+            Clone on GitHub.
+          </Link>
+        </Row>
+        <Row>
+          <Link
+            icon
+            color="primary"
+            target="_blank"
+            href="https://docs.saasbox.net/how-to-create-a-saas-with-web-frameworks/create-a-nextjs-saas-application-in-30-minutes"
+          >
+            Check out the docs.
+          </Link>
+        </Row>
       </Card.Footer>
     </Card>
-    <Spacer y={2} />
     </>
   );
 }
