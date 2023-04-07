@@ -1,8 +1,9 @@
-import { Card, Grid, Text, Link } from "@nextui-org/react";
+import { Spacer, Card, Grid, Text, Link } from "@nextui-org/react";
 
 export function AppCard({user}) {
   const username = user.firstname + " " + user.lastname;
   return (
+    <Spacer y={2}/>
     <Card css={{ p: "$6", mw: "400px" }}>
       <Card.Header>
         <img
@@ -34,7 +35,7 @@ export function AppCard({user}) {
           target="_blank"
           href="https://github.com/getsaasbox/nextjs-nextui-sboxauth-example"
         >
-          Clone it on GitHub and start your SaaS.
+          Clone this on GitHub and start your SaaS.
         </Link>
       </Card.Footer>
     </Card>
