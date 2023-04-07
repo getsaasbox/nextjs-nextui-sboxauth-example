@@ -14,6 +14,7 @@ export function AppNavbar({ children }) {
     "Help & Feedback",
     "Log Out",
   ];
+  let user = children.props.user;
 
   return (
     <Navbar isBordered variant="sticky">
@@ -59,7 +60,7 @@ export function AppNavbar({ children }) {
                 as="button"
                 color="secondary"
                 size="md"
-                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                src={user.avatarUrl}
               />
             </Dropdown.Trigger>
           </Navbar.Item>
@@ -73,7 +74,7 @@ export function AppNavbar({ children }) {
                 Signed in as
               </Text>
               <Text b color="inherit" css={{ d: "flex" }}>
-                zoey@example.com
+                {user.email}
               </Text>
             </Dropdown.Item>
             <Dropdown.Item key="settings" withDivider>
