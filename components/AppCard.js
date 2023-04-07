@@ -30,7 +30,7 @@ export function AppCard({user}) {
           target="_blank"
           href="https://github.com/getsaasbox/nextjs-nextui-sboxauth-example"
         >
-          Clone this on GitHub and start your SaaS.
+          Clone on GitHub and start your SaaS.
         </Link>
       </Card.Footer>
     </Card>
