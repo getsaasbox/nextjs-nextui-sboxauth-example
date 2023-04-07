@@ -1,6 +1,7 @@
 // 1. import `NextUIProvider` component
 import { NextUIProvider } from '@nextui-org/react';
 import { useSSR } from '@nextui-org/react';
+import '../styles/globals.css'
 
 import { Layout } from "../components/Layout.js";
 
