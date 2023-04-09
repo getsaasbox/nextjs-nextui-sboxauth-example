@@ -15,7 +15,7 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sbox-auth-next": "^1.0.29"
+    "sbox-auth-next": "^1.0.30"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
